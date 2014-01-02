@@ -1,0 +1,11 @@
+{
+    "builds" : [
+        {"t":"v","name":"John","type":"customer"},
+        {"t":"v","name":"Checking","type":"account","num":12345},
+        {"t":"e","source":1,"target":0,"value":1},
+        {"t":"v","name":"Savings","type":"account","num":23456},
+        {"t":"v","name":"Investment","type":"account","num":34567},
+        {"t":"e","source":2,"target":0,"value":1},
+        {"t":"e","source":3,"target":0,"value":1}
+    ]
+}

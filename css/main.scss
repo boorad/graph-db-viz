@@ -1,0 +1,19 @@
+$border: #333;
+
+.vertex {
+    stroke: $border;
+    stroke-width: 2px;
+}
+
+.edge {
+    fill: none;
+    stroke: $border;
+    stroke-width: 3px;
+}
+
+.customer {
+    fill: #b00;
+}
+.account {
+    fill: #2554c7;
+}

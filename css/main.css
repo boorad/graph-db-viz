@@ -1,0 +1,14 @@
+.vertex {
+  stroke: #333333;
+  stroke-width: 2px; }
+
+.edge {
+  fill: none;
+  stroke: #333333;
+  stroke-width: 3px; }
+
+.customer {
+  fill: #b00; }
+
+.account {
+  fill: #2554c7; }
