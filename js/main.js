@@ -30,14 +30,19 @@
         edge.exit().remove();
 
         vertex = vertex.data(_vertices);
-        vertex.enter().append("circle")
-            .attr("class", function(d) {return "vertex " + d.type; })
-            .attr("r", r)
+        var vertexEnter = vertex.enter().append("g")
+            .attr("class", "vertex")
             .call(force.drag);
-        vertex.exit().remove();
 
-        vertex.append("title")
+        vertexEnter.append("circle")
+            .attr("class", function(d) {return d.type; })
+            .attr("r", r)
+
+        vertexEnter.append("text")
+            .attr("dy", ".35em")
             .text(function(d) { return d.name; });
+
+        vertex.exit().remove();
 
         force.on("tick", _tick);
 
@@ -50,8 +55,9 @@
             .attr("x2", function(d) { return d.target.x; })
             .attr("y2", function(d) { return d.target.y; });
 
-        vertex.attr("cx", function(d) { return d.x; })
-              .attr("cy", function(d) { return d.y; });
+        vertex.attr("transform", function(d) {
+            return "translate(" + d.x + "," + d.y + ")";
+        });
 
     };
 

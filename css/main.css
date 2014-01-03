@@ -1,14 +1,18 @@
-.vertex {
+.vertex circle {
   stroke: #333333;
   stroke-width: 2px; }
+.vertex text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-anchor: middle;
+  fill: #fff;
+  text-shadow: 1px 1px #000; }
+.vertex .customer {
+  fill: #b00; }
+.vertex .account {
+  fill: #2554c7; }
 
 .edge {
   fill: none;
   stroke: #333333;
   stroke-width: 3px; }
-
-.customer {
-  fill: #b00; }
-
-.account {
-  fill: #2554c7; }

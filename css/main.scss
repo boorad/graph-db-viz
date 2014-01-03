@@ -1,19 +1,28 @@
 $border: #333;
 
 .vertex {
-    stroke: $border;
-    stroke-width: 2px;
+    circle {
+        stroke: $border;
+        stroke-width: 2px;
+    }
+    text {
+        font: 10px sans-serif;
+        pointer-events: none;
+        text-anchor: middle;
+        fill: #fff;
+        text-shadow: 1px 1px #000;
+    }
+
+    .customer {
+        fill: #b00;
+    }
+    .account {
+        fill: #2554c7;
+    }
 }
 
 .edge {
     fill: none;
     stroke: $border;
     stroke-width: 3px;
-}
-
-.customer {
-    fill: #b00;
-}
-.account {
-    fill: #2554c7;
 }
