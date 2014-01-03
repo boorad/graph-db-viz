@@ -6,7 +6,7 @@ $border: #333;
         stroke-width: 2px;
     }
     text {
-        font: 10px sans-serif;
+        font: 11px sans-serif;
         pointer-events: none;
         text-anchor: middle;
         fill: #fff;
@@ -18,6 +18,9 @@ $border: #333;
     }
     .account {
         fill: #2554c7;
+    }
+    .tx {
+        fill: #999;
     }
 }
 

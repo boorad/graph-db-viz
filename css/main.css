@@ -2,7 +2,7 @@
   stroke: #333333;
   stroke-width: 2px; }
 .vertex text {
-  font: 10px sans-serif;
+  font: 11px sans-serif;
   pointer-events: none;
   text-anchor: middle;
   fill: #fff;
@@ -11,6 +11,8 @@
   fill: #b00; }
 .vertex .account {
   fill: #2554c7; }
+.vertex .tx {
+  fill: #999; }
 
 .edge {
   fill: none;

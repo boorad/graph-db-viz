@@ -3,12 +3,12 @@
 
     var width = 960,
         height = 500,
-        r = 20;
+        r = 15;
 
     var force = d3.layout.force()
-        .gravity(.05)
-        .charge(-200)
-        .linkDistance(100)
+        .gravity(.07)
+        .charge(-120)
+        .linkDistance(80)
         .size([width, height])
 
     var svg = d3.select("#container").append("svg")
@@ -26,21 +26,25 @@
 
         edge = edge.data(_edges);
         edge.enter().insert("line", ".vertex")
-            .attr("class", "edge");
+            .attr("class", "edge")
+            .on("click", _click);
         edge.exit().remove();
 
         vertex = vertex.data(_vertices);
         var vertexEnter = vertex.enter().append("g")
             .attr("class", "vertex")
+            .on("click", _click)
             .call(force.drag);
 
         vertexEnter.append("circle")
             .attr("class", function(d) {return d.type; })
-            .attr("r", r)
+            .attr("r", function(d) {
+                return d.type == "tx" ? r*(2/3) : r;
+            })
 
         vertexEnter.append("text")
             .attr("dy", ".35em")
-            .text(function(d) { return d.name; });
+            .text(function(d, i) { return i; });
 
         vertex.exit().remove();
 
@@ -59,6 +63,10 @@
             return "translate(" + d.x + "," + d.y + ")";
         });
 
+    };
+
+    _click = function(o, i) {
+        console.log(o, i);
     };
 
     // public
@@ -99,16 +107,30 @@ function build() {
     // check to see if we are done building
     if( b >= builds.length ) return;
 
-    // add vertex or edge
-    var j = builds[b];
-    if( j.t == "v" )
-        graph.addVertex(j);
-    if( j.t == "e" )
-        graph.addEdge(j);
+    var n=1;
+    switch( b ) {
+    case 7:
+        n=22;
+        break;
+    case 29:
+        n=22;
+        break;
+    default:
+        n=1;
+    }
 
-    // increment build number
-    b++;
-    if( b > builds.length ) b = builds.length;
+    for( var i=0; i < n; i++ ) {
+        // add vertex or edge
+        var j = builds[b];
+        if( j.t == "v" )
+            graph.addVertex(j);
+        if( j.t == "e" )
+            graph.addEdge(j);
+
+        // increment build number
+        b++;
+        if( b > builds.length ) b = builds.length;
+    }
 }
 
 function bind_keys() {
