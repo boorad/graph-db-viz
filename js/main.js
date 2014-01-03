@@ -2,12 +2,12 @@
 (function(G) {
 
     var width = 960,
-        height = 500,
+        height = 600,
         r = 15;
 
     var force = d3.layout.force()
         .gravity(.07)
-        .charge(-120)
+        .charge(-250)
         .linkDistance(80)
         .size([width, height])
 
@@ -40,7 +40,7 @@
             .attr("class", function(d) {return d.type; })
             .attr("r", function(d) {
                 return d.type == "tx" ? r*(2/3) : r;
-            })
+            });
 
         vertexEnter.append("text")
             .attr("dy", ".35em")
@@ -113,7 +113,13 @@ function build() {
         n=22;
         break;
     case 29:
-        n=22;
+        n=12;
+        break;
+    case 41:
+        n=8;
+        break;
+    case 49:
+        n=2;
         break;
     default:
         n=1;
