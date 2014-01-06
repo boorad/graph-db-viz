@@ -108,26 +108,14 @@ function build() {
     if( b >= builds.length ) return;
 
     var n=1;
-    switch( b ) {
-    case 7:
-        n=22;
-        break;
-    case 29:
-        n=12;
-        break;
-    case 41:
-        n=8;
-        break;
-    case 49:
-        n=2;
-        break;
-    default:
-        n=1;
+    var j = builds[b];
+    if( j.batch ) {
+        n = parseInt(j.batch);
     }
 
     for( var i=0; i < n; i++ ) {
+        j = builds[b];
         // add vertex or edge
-        var j = builds[b];
         if( j.t == "v" )
             graph.addVertex(j);
         if( j.t == "e" )

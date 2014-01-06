@@ -5,9 +5,9 @@
         {"t":"e","source":1,"target":0,"label":"owner"},
         {"t":"v","name":"Savings","type":"account","num":23456},
         {"t":"v","name":"Investment","type":"account","num":34567},
-        {"t":"e","source":2,"target":0,"label":"owner"},
+        {"t":"e","source":2,"target":0,"label":"owner","batch":2},
         {"t":"e","source":3,"target":0,"label":"owner"},
-        {"t":"v","name":"tx","type":"tx","amt":123.45},
+        {"t":"v","name":"tx","type":"tx","amt":123.45,"batch":22},
         {"t":"v","name":"tx","type":"tx","amt":234.56},
         {"t":"v","name":"tx","type":"tx","amt":100},
         {"t":"v","name":"tx","type":"tx","amt":100},
@@ -29,7 +29,7 @@
         {"t":"v","name":"tx","type":"tx","amt":100},
         {"t":"v","name":"tx","type":"tx","amt":100},
         {"t":"v","name":"tx","type":"tx","amt":345.67},
-        {"t":"e","source":4,"target":1,"label":"performed"},
+        {"t":"e","source":4,"target":1,"label":"performed","batch":12},
         {"t":"e","source":5,"target":1,"label":"performed"},
         {"t":"e","source":6,"target":1,"label":"performed"},
         {"t":"e","source":7,"target":1,"label":"performed"},
@@ -41,7 +41,7 @@
         {"t":"e","source":13,"target":1,"label":"performed"},
         {"t":"e","source":14,"target":1,"label":"performed"},
         {"t":"e","source":15,"target":1,"label":"performed"},
-        {"t":"e","source":16,"target":2,"label":"performed"},
+        {"t":"e","source":16,"target":2,"label":"performed","batch":8},
         {"t":"e","source":17,"target":2,"label":"performed"},
         {"t":"e","source":18,"target":2,"label":"performed"},
         {"t":"e","source":19,"target":2,"label":"performed"},
@@ -49,7 +49,7 @@
         {"t":"e","source":21,"target":2,"label":"performed"},
         {"t":"e","source":22,"target":2,"label":"performed"},
         {"t":"e","source":23,"target":2,"label":"performed"},
-        {"t":"e","source":24,"target":3,"label":"performed"},
+        {"t":"e","source":24,"target":3,"label":"performed","batch":2},
         {"t":"e","source":25,"target":3,"label":"performed"}
     ]
 }
