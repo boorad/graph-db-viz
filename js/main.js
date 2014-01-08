@@ -1,9 +1,11 @@
 
 (function(G) {
 
-    var width = 960,
-        height = 600,
+    var width = window.innerWidth - 4,
+        height = window.innerHeight - 14,
         r = 15;
+
+    var info = d3.select("#info");
 
     var force = d3.layout.force()
         .gravity(.07)
@@ -27,13 +29,26 @@
         edge = edge.data(_edges);
         edge.enter().insert("line", ".vertex")
             .attr("class", "edge")
-            .on("click", _click);
+            .on("mouseover", function(d,i) { _hover(d,i); })
+            .on("mousemove", function() {
+                info.style("top",(d3.event.pageY-10)+"px")
+                    .style("left",(d3.event.pageX+10)+"px");
+            })
+            .on("mouseout", function() { info.style("visibility", "hidden"); })
+            .on("mouseup", function() { info.style("visibility", "hidden"); });
+
         edge.exit().remove();
 
         vertex = vertex.data(_vertices);
         var vertexEnter = vertex.enter().append("g")
             .attr("class", "vertex")
-            .on("click", _click)
+            .on("mouseover", function(d,i) { _hover(d,i); })
+            .on("mousemove", function() {
+                info.style("top",(d3.event.pageY-10)+"px")
+                    .style("left",(d3.event.pageX+10)+"px");
+            })
+            .on("mouseout", function() { info.style("visibility", "hidden"); })
+            .on("mouseup", function() { info.style("visibility", "hidden"); })
             .call(force.drag);
 
         vertexEnter.append("circle")
@@ -65,8 +80,27 @@
 
     };
 
-    _click = function(o, i) {
-        console.log(o, i);
+    _hover = function(d,i) {
+        d3.selectAll("#info tbody tr").remove();
+        var tbody = d3.select("#info tbody");
+        var oe = 0;
+        var oddeven = "even";
+        for(k in d) {
+            if( k != "t" && k != "index" && k != "x" && k != "y" && k != "fixed"
+                && k != "px" && k != "py" && k != "weight" && k != "batch"
+                && k != "source" && k != "target" ) {
+                if( oe % 2 == 0 )
+                    oddeven = "even";
+                else
+                    oddeven = "odd";
+                var tr = tbody.append("tr")
+                    .attr("class", oddeven);
+                tr.append("th").text(k);
+                tr.append("td").text(d[k]);
+                oe++;
+            }
+        }
+        info.style("visibility", "visible");
     };
 
     // public

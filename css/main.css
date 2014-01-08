@@ -1,3 +1,11 @@
+body {
+  margin: 2px;
+  padding: 2px; }
+
+#container {
+  font-family: sans-serif;
+  border: 1px solid #999; }
+
 .vertex circle {
   stroke: #333333;
   stroke-width: 2px; }
@@ -18,3 +26,21 @@
   fill: none;
   stroke: #333333;
   stroke-width: 3px; }
+
+#info {
+  position: absolute;
+  z-index: 200;
+  visibility: hidden;
+  font-size: 0.8em;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 2px; }
+  #info td, #info th {
+    padding: 2px; }
+  #info th {
+    text-align: left; }
+  #info tr:nth-child(even) {
+    background: #CCC; }
+  #info tr:nth-child(odd) {
+    background: #FFF; }
