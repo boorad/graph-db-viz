@@ -2,6 +2,95 @@ body {
   margin: 2px;
   padding: 2px; }
 
+.ba {
+  background: url("/img/ba.png") no-repeat fixed left bottom; }
+  .ba .customer {
+    fill: #b00; }
+  .ba .account {
+    fill: #2554c7; }
+  .ba .tx {
+    fill: #999; }
+
+.st {
+  background: url("/img/st.png") no-repeat fixed 8px bottom; }
+  .st .customer {
+    fill: #00467f; }
+  .st .account {
+    fill: #fdb513; }
+  .st .tx {
+    fill: #f16121; }
+
+.thd {
+  background: url("/img/thd.png") no-repeat fixed -32px bottom; }
+  .thd .customer circle {
+    fill: #fff; }
+  .thd .customer text {
+    fill: #333;
+    text-shadow: none; }
+  .thd .pos {
+    fill: #999; }
+  .thd .item {
+    fill: #fe7002; }
+  .thd .project circle {
+    fill: #999; }
+
+.ko {
+  background: url("/img/ko.png") no-repeat fixed 8px bottom; }
+  .ko .tweet circle {
+    fill: #fff; }
+  .ko .tweet text {
+    fill: #333;
+    text-shadow: none; }
+  .ko .customer {
+    fill: #db2c1b; }
+  .ko .view {
+    fill: #db2c1b; }
+  .ko .event circle, .ko .contest circle {
+    fill: #999; }
+  .ko .venue circle {
+    fill: #db2c1b; }
+  .ko .retweet {
+    stroke: #999;
+    stroke-width: 1px; }
+
+.wf {
+  /* background: url('/img/ko.png') no-repeat fixed 8px bottom; */ }
+  .wf .account circle {
+    fill: #fff; }
+  .wf .account text {
+    fill: #333;
+    text-shadow: none; }
+  .wf .customer {
+    fill: #db2c1b; }
+  .wf .view {
+    fill: #db2c1b; }
+  .wf .event circle, .wf .contest circle {
+    fill: #999; }
+  .wf .venue circle {
+    fill: #db2c1b; }
+  .wf .retweet {
+    stroke: #999;
+    stroke-width: 1px; }
+
+.fpl {
+  background: url("/img/fpl.png") no-repeat fixed 8px bottom; }
+  .fpl .account circle {
+    fill: #fff; }
+  .fpl .account text {
+    fill: #333;
+    text-shadow: none; }
+  .fpl .customer {
+    fill: #006bb6; }
+  .fpl .view {
+    fill: #006bb6; }
+  .fpl .event circle, .fpl .contest circle {
+    fill: #999; }
+  .fpl .venue circle {
+    fill: #006bb6; }
+  .fpl .retweet {
+    stroke: #999;
+    stroke-width: 1px; }
+
 #container {
   font-family: sans-serif;
   border: 1px solid #999; }
@@ -15,11 +104,7 @@ body {
   text-anchor: middle;
   fill: #fff;
   text-shadow: 1px 1px #000; }
-.vertex .customer {
-  fill: #b00; }
-.vertex .account {
-  fill: #2554c7; }
-.vertex .tx {
+.vertex .super circle {
   fill: #999; }
 
 .edge {

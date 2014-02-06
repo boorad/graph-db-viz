@@ -5,6 +5,96 @@ body {
     padding: 2px;
 }
 
+.ba {
+    background: url('/img/ba.png') no-repeat fixed left bottom;
+    .customer {
+        fill: #b00;
+    }
+    .account {
+        fill: #2554c7;
+    }
+    .tx {
+        fill: #999;
+    }
+}
+
+.st {
+    background: url('/img/st.png') no-repeat fixed 8px bottom;
+    .customer {
+        fill: #00467f;
+    }
+    .account {
+        fill: #fdb513;
+    }
+    .tx {
+        fill: #f16121;
+    }
+}
+
+.thd {
+    background: url('/img/thd.png') no-repeat fixed -32px bottom;
+    .customer {
+        circle { fill: #fff; }
+        text { fill: #333; text-shadow: none; }
+    }
+    .pos { fill: #999; }
+    .item { fill: #fe7002; }
+    .project {
+        circle { fill: #999; }
+    }
+}
+
+.ko {
+    background: url('/img/ko.png') no-repeat fixed 8px bottom;
+    .tweet {
+        circle { fill: #fff; }
+        text { fill: #333; text-shadow: none; }
+    }
+    .customer { fill: #db2c1b; }
+    .view { fill: #db2c1b; }
+    .event, .contest {
+        circle { fill: #999; }
+    }
+    .venue {
+        circle { fill: #db2c1b; }
+    }
+    .retweet { stroke: #999; stroke-width: 1px; }
+}
+
+.wf {
+    /* background: url('/img/ko.png') no-repeat fixed 8px bottom; */
+    .account {
+        circle { fill: #fff; }
+        text { fill: #333; text-shadow: none; }
+    }
+    .customer { fill: #db2c1b; }
+    .view { fill: #db2c1b; }
+    .event, .contest {
+        circle { fill: #999; }
+    }
+    .venue {
+        circle { fill: #db2c1b; }
+    }
+    .retweet { stroke: #999; stroke-width: 1px; }
+}
+
+.fpl {
+    background: url('/img/fpl.png') no-repeat fixed 8px bottom;
+    .account {
+        circle { fill: #fff; }
+        text { fill: #333; text-shadow: none; }
+    }
+    .customer { fill: #006bb6; }
+    .view { fill: #006bb6; }
+    .event, .contest {
+        circle { fill: #999; }
+    }
+    .venue {
+        circle { fill: #006bb6; }
+    }
+    .retweet { stroke: #999; stroke-width: 1px; }
+}
+
 #container {
     font-family: sans-serif;
     border: 1px solid #999;
@@ -22,15 +112,8 @@ body {
         fill: #fff;
         text-shadow: 1px 1px #000;
     }
-
-    .customer {
-        fill: #b00;
-    }
-    .account {
-        fill: #2554c7;
-    }
-    .tx {
-        fill: #999;
+    .super {
+        circle { fill: #999; }
     }
 }
 

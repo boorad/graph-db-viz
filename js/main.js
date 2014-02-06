@@ -25,10 +25,19 @@
     _edges = force.links();
 
     _update = function() {
-
         edge = edge.data(_edges);
         edge.enter().insert("line", ".vertex")
-            .attr("class", "edge")
+            .attr("class", function(d) {
+                var edgeClass = "";
+                switch( d.label ) {
+                case "retweeted":
+                    edgeClass = " retweet";
+                    break;
+                default:
+                    break;
+                }
+                return "edge" + edgeClass;
+            })
             .on("mouseover", function(d,i) { _hover(d,i); })
             .on("mousemove", function() {
                 info.style("top",(d3.event.pageY-10)+"px")
@@ -41,7 +50,7 @@
 
         vertex = vertex.data(_vertices);
         var vertexEnter = vertex.enter().append("g")
-            .attr("class", "vertex")
+            .attr("class", function(d) {return "vertex " + d.type; })
             .on("mouseover", function(d,i) { _hover(d,i); })
             .on("mousemove", function() {
                 info.style("top",(d3.event.pageY-10)+"px")
@@ -52,9 +61,21 @@
             .call(force.drag);
 
         vertexEnter.append("circle")
-            .attr("class", function(d) {return d.type; })
             .attr("r", function(d) {
-                return d.type == "tx" ? r*(2/3) : r;
+                switch( d.type ) {
+                case "tx":
+                case "item":
+                    return r*(2/3);
+                    break;
+                case "super":
+                case "project":
+                case "venue":
+                case "event":
+                    return 2*r;
+                    break;
+                default:
+                    return r;
+                }
             });
 
         vertexEnter.append("text")

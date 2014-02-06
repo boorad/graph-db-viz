@@ -60,12 +60,10 @@
         {"t":"v","name":"Checking Account","type":"account","num":45678},
         {"t":"e","source":28,"target":27,"label":"ownedBy","opened_date":"10/31/2011","open_channel":"branch"},
         {"t":"v","name":"tx","type":"tx","amt":9990},
-        {"t":"e","source":29,"target":28,"label":"creditFrom"},
         {"t":"v","name":"Guy Maladroit","type":"customer"},
         {"t":"v","name":"Checking Account","type":"account","num":56789},
-        {"t":"e","source":31,"target":30,"label":"ownedBy","opened_date":"10/31/2011","open_channel":"branch"},
-        {"t":"e","source":29,"target":31,"label":"debitTo"},
-        {"t":"e","source":31,"target":23,"label":"creditFrom"},
+        {"t":"e","source":31,"target":28,"label":"ownedBy","opened_date":"10/31/2011","open_channel":"branch"},
+        {"t":"e","source":30,"target":31,"label":"debitTo"},
         {"t":"v","name":"OFAC Watchlist","type":"super"},
         {"t":"e","source":30,"target":32,"label":"memberOf"}
     ]
