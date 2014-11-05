@@ -31,6 +31,18 @@ body {
     }
 }
 
+.lti {
+    .customer {
+        fill: #0066a6;
+    }
+    .account {
+        fill: #db9f00;
+    }
+    .tx {
+        fill: #ccc;
+    }
+}
+
 .thd {
     background: url('/img/thd.png') no-repeat fixed -32px bottom;
     .customer {

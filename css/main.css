@@ -20,6 +20,13 @@ body {
   .st .tx {
     fill: #f16121; }
 
+.lti .customer {
+  fill: #0066a6; }
+.lti .account {
+  fill: #db9f00; }
+.lti .tx {
+  fill: #ccc; }
+
 .thd {
   background: url("/img/thd.png") no-repeat fixed -32px bottom; }
   .thd .customer circle {
