@@ -192,7 +192,7 @@ function bind_keys() {
 }
 
 function populate_builds() {
-    d3.json("data/graph.json", function(error, json) {
+    d3.json("data/bank.json", function(error, json) {
         builds = json.builds;
     });
 }
